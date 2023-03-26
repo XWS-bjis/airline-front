@@ -1,0 +1,13 @@
+<head>
+
+</head>
+<body>
+    <ul>
+        <li routerLink=""><a>Search</a></li> <!--TO DO: make sure that this route matches with Component which user see as home page, see: app-routing.module-->
+        <li *ngIf="role === 'ROLE_ADMIN'"><a>Create flight</a></li>
+        <li *ngIf="role === 'ROLE_REGULAR'"><a>My reservations</a></li>
+        <li style="float:right"><a class="active" *ngIf="userExists === 'false'" routerLink="/login">Login</a></li>
+        <li style="float:right" *ngIf="userExists === 'false'"><a>Sign in</a></li>
+        <li style="float:right" (click)="logout()" *ngIf="userExists === 'true'"><a class="active">Logout</a></li>
+      </ul>
+</body>
