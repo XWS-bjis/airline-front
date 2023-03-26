@@ -1,0 +1,9 @@
+<div>
+ <form>
+        <label for="username">Username:</label>
+        <input type="text" name="username" placeholder="Enter username" [(ngModel)] = "loginCredential.userName" id="userName">
+        <label for="password">Password:</label>
+        <input type="text"  name="password" placeholder="Enter password" [(ngModel)] = "loginCredential.password" id="password">
+        <button type="button" (click)="loginUser()">LOGIN</button>
+ </form>
+</div>
