@@ -20,6 +20,9 @@ import { AllReservationComponent } from './components/reservation/all-reservatio
 import { RegisterComponent } from './components/users/register/register.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
+import { CreateFlightComponent } from './components/flight/create-flight/create-flight.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +30,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     NavbarComponent,
     FlightsPageComponent,
     AllReservationComponent,
-    RegisterComponent
+    RegisterComponent,
+    CreateFlightComponent
   ],
   imports: [
     BrowserModule,
