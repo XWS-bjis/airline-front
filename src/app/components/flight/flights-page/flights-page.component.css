@@ -84,7 +84,7 @@
     transition: 0.5s;
     padding: 0 1rem;
     border-radius: 2rem;
-    margin-top: 5rem;
+    margin-top: 8rem;
     margin-bottom: 2rem;
     height: 1rem !important;
   }
@@ -112,7 +112,8 @@
     height: 2.8rem;
     width: 5rem;
     border: 1px solid transparent;
-    background-image: linear-gradient(to right, #ea283f 0%, #ff5e70 51%, #ea283f 100%);
+    /*background-image: linear-gradient(to right, #ea283f 0%, #ff5e70 51%, #ea283f 100%);*/
+    background-color: #f5a30a;
     text-align: center;
     transition: 0.5s;
     background-size: 200% auto;
