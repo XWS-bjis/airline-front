@@ -3,50 +3,54 @@
 <form>
   <div class="form-group">
     <label for="name">Take of date      :  </label>
-    <input  type="datetime-local" class="form-control" id="takeOfDate" name="takeOfDate" value="2023-01-01T00:00"  [(ngModel)]="takeOfDate" />
+    <input  type="datetime-local" class="form-control" id="takeOfDate" name="takeOfDate" value="flight.takeOfDate" [(ngModel)]="flight.takeOfDate" />
   </div>
 
   <div class="form-group">
     <label for="name">Landing date     :  </label>
-    <input  type="datetime-local" class="form-control" id="landingDate" name="landingDate" value="2023-01-01T00:00"  [(ngModel)]="landingDate"  />
+    <input  type="datetime-local" class="form-control" id="landingDate" name="landingDate" value="flight.landingDate"  [(ngModel)]="flight.landingDate"  />
   </div>
 
   <div class="form-group">
     <label for="admin">Landing place</label>
-     <select class="form-control" id="landingPlace" name="landingPlace"  [(ngModel)]="landingPlace">
-       <option >
-          
-       </option>
+     <select class="form-control" id="landingPlace" name="landingPlace"  [(ngModel)]="flight.landingPlace">
+      <option value="BELGRADE">BELGRADE</option>
+      <option value="LONDON">LONDON</option>
+      <option value="PARIS">PARIS</option>
+      <option value="OSLO">OSLO</option>
+      <option value="TIVAT">TIVAT</option>
+      <option value="MOSCOW">MOSCOW</option>
       </select>
   </div>
   <div class="form-group">
     <label for="admin">Departure place</label>
-    <select class="form-control" id="departurePlace" name="departurePlace"  [(ngModel)]="departurePlace" >
-      <option>
-
-      </option>
-       </select>
+    <select class="form-control" id="departurePlace" name="departurePlace"  [(ngModel)]="flight.departurePlace" >
+      <option value="BELGRADE">BELGRADE</option>
+      <option value="LONDON">LONDON</option>
+      <option value="PARIS">PARIS</option>
+      <option value="OSLO">OSLO</option>
+      <option value="TIVAT">TIVAT</option>
+      <option value="MOSCOW">MOSCOW</option>
+    </select>
   </div>
   
   <div class="form-group">
     <label for="averageRate">Ticket price</label>
-    <input type="number" class="form-control" name="ticketPrice"  [(ngModel)]="ticketPrice" >
+    <input type="number" class="form-control" name="ticketPrice"  [(ngModel)]="flight.ticketPrice" >
   </div>
 
   <div class="form-group">
     <label for="averageRate">Total seats number</label>
-    <input type="number" class="form-control" name="totalSeatsNumber"  [(ngModel)]="totalSeatsNumber" >
+    <input type="number" class="form-control" name="totalSeatsNumber"  [(ngModel)]="flight.totalSeatsNumber" >
   </div>
 
   <div class="form-group">
     <label for="averageRate">Available seats number</label>
-    <input type="number" class="form-control" name="availableSeatsNumber"  [(ngModel)]="availableSeatsNumber">
+    <input type="number" class="form-control" name="availableSeatsNumber"  [(ngModel)]="flight.availableSeatsNumber">
   </div>
 
 
-   
- 
-  <button type="button" (click)="saveFlight()" class="btn btn-primary" >Add flight</button>
+  <button type="button" class="btn btn-primary" (click)="onSubmit()" >Add flight</button>
   <br>
   <br>
 

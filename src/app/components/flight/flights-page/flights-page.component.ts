@@ -45,9 +45,21 @@ export class FlightsPageComponent implements OnInit {
 
   public role:String = '';
 
+
+
   ngOnInit(): void {
     this.defineUserRole();
     this.getFlights();
+  }
+
+
+  deleteFlight(id: String){
+    this.service.deleteFlight(id).subscribe(
+      data => {
+        console.log(id);
+        console.log(data);
+      }
+    );
   }
 
   buyTickets(id: string) {

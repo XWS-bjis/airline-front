@@ -33,13 +33,13 @@ export class FlightService {
     return this.http.post<Flight>(`${this.baseUrl}create`, JSON.stringify(flight), { headers: this.headers });
   }
 
-  getFlightById(id:number): Observable<Flight>{
-    return this.http.get<Flight>(`${this.baseUrl}/find/${id}`,  { headers: this.headers });
+  getFlightById(id:String): Observable<Flight>{
+    return this.http.get<Flight>(`${this.baseUrl}find/${id}`,  { headers: this.headers });
   }
 
 
-  deleteFlight(id:number): Observable<void>{
-    return this.http.delete<void>(`${this.baseUrl}/delete/${id}`);
-
+  deleteFlight(id:String): Observable<any>{
+    return this.http.delete<any>(`${this.baseUrl}delete/${id}`, { headers: this.headers });
   }
+
 }

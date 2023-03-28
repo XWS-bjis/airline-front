@@ -16,7 +16,7 @@
       <a routerLink="/my-flights" *ngIf="role === 'ROLE_REGULAR'">
         <div class="item">My reservations</div>
       </a>
-      <a *ngIf="role === 'ROLE_ADMIN'">
+      <a *ngIf="role === 'ROLE_ADMIN'" routerLink="create-flight">
         <div class="item">Create flight</div>
       </a>
       <a routerLink="login"  *ngIf="userExists === 'false'">

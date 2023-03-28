@@ -63,11 +63,15 @@
             Price for {{totalPassengers}} passengers: {{totalPassengers*flight.ticketPrice}} €
           </div>
         </mat-card-content>
+
         <mat-card-footer>
           <hr>
           <button class="check-out-button">See details</button>
           <button class="buy-button" *ngIf="role === 'ROLE_REGULAR' && flightFilter.passengers !== undefined && flightFilter.passengers !== 0" (click)="buyTickets(flight.id)">Buy</button>
         </mat-card-footer>
+
+        <mat-card-footer><hr><button class="check-out-button">See details</button></mat-card-footer>
+        <mat-card-footer *ngIf="role==='ROLE_ADMIN'"  (click)="deleteFlight(flight.id)" ><hr><button class="check-out-button">Delete</button></mat-card-footer>
       </mat-card>
       <div *ngIf="!flights.length" class="no-flights">
         No flights found!

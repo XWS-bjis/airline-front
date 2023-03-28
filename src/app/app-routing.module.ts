@@ -12,7 +12,8 @@ const routes: Routes = [
     {path: '', component: FlightsPageComponent},
     {path: 'my-flights', component: AllReservationComponent},
     {path: 'register', component: RegisterComponent},
-    {path: "flight/create-flight", component: CreateFlightComponent}
+    {path: "flight/create-flight", component: CreateFlightComponent},
+    {path: "create-flight", component: CreateFlightComponent}
 ];
 
 @NgModule({
