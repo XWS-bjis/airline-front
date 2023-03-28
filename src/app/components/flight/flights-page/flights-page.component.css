@@ -7,13 +7,19 @@
     transition: 0.5s;
     margin-bottom: 2rem;
     margin-right: 2rem;
+
   }
-  
+
   .flight-title {
     display: flex;
     align-items: center;
   }
   
+  .flight-subtitle {
+    display: flex;
+    align-items: center;
+  }
+
   .flight-card:hover {
     background-color: white !important;
   }

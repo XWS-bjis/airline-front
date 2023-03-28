@@ -15,6 +15,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon'
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatInputModule,
     MatNativeDateModule,
     BrowserAnimationsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatIconModule
   ],
   providers: [
    {

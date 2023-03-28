@@ -21,6 +21,8 @@ export class FlightsPageComponent implements OnInit {
   }
 
   getFilteredFlights(): void{
+    console.log(this.flightFilter)
+    console.log(this.flightFilter.passengers)
     this.service.filter(this.flightFilter).subscribe(data => {
       console.log(data);
       this.flights = data;
@@ -28,7 +30,7 @@ export class FlightsPageComponent implements OnInit {
   }
 
   addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
-    this.flightFilter.takeOfDate = (`${type}: ${event.value}`);
+    this.flightFilter.searchDate = (`${event.value?.getFullYear()}/${(event.value?.getMonth() || 0) + 1}/${event.value?.getDate()}`) ;
   }
 
   constructor(

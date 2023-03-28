@@ -1,5 +1,5 @@
 type FlightFilter = {
-    takeOfDate: string,
+    searchDate: string,
     landingPlace: string,
     departurePlace: string,
     passengers: number

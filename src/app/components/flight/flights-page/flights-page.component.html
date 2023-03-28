@@ -3,7 +3,7 @@
       <div class="filter-div">
         <mat-form-field appearance="outline">
           <mat-label>Departure place</mat-label>
-          <mat-select matInput [(ngModel)]="flightFilter.landingPlace">
+          <mat-select matInput [(ngModel)]="flightFilter.departurePlace">
             <mat-option value="BELGRADE">BELGRADE</mat-option>
             <mat-option value="LONDON">LONDON</mat-option>
             <mat-option value="PARIS">PARIS</mat-option>
@@ -14,7 +14,7 @@
         </mat-form-field>
         <mat-form-field appearance="outline">
           <mat-label>Landing place</mat-label>
-          <mat-select matInput [(ngModel)]="flightFilter.departurePlace">
+          <mat-select matInput [(ngModel)]="flightFilter.landingPlace">
             <mat-option value="BELGRADE">BELGRADE</mat-option>
             <mat-option value="LONDON">LONDON</mat-option>
             <mat-option value="PARIS">PARIS</mat-option>
@@ -35,7 +35,6 @@
             min="0"
             aria-label="Number"
             matInput
-            formControlName="quantity"
             [(ngModel)]="flightFilter.passengers">
         </mat-form-field>         
       </div>
@@ -45,13 +44,21 @@
     <div class="cards">
       <mat-card *ngFor="let flight of flights" class="flight-card">
         <mat-card-title class="flight-title">
-            {{flight.departurePlace}} - {{flight.landingPlace}}
+          {{flight.departurePlace}} - {{flight.landingPlace}}
+          <div class="tag">
+            <mat-icon fontIcon="euro_symbol" class="icon"></mat-icon>
+            <span>{{flight.ticketPrice}}</span>
+          </div>
         </mat-card-title>
-        <mat-card-subtitle>
-            {{flight.ticketPrice}}
+        <mat-card-subtitle class="flight-subtitle">
+          <mat-icon fontIcon="flight_land" class="icon"></mat-icon>
+          {{flight.takeOfDate | date: "MM-dd-yyyy HH:MM"}} 
+          <br/> 
+          <mat-icon fontIcon="flight_takeoff" class="icon"></mat-icon>
+          {{flight.landingDate | date: "MM-dd-yyyy HH:MM"}}
         </mat-card-subtitle>
         <mat-card-content>
-          <p>{{flight.availableSeatsNumber}}</p>
+          <p class="flight-subtitle"><mat-icon fontIcon="airline_seat_recline_extra" class="icon"></mat-icon> {{flight.availableSeatsNumber}}</p>
         </mat-card-content>
         <mat-card-footer><hr><button class="check-out-button">See details</button></mat-card-footer>
       </mat-card>
