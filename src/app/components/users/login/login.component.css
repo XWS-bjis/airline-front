@@ -5,13 +5,13 @@
     display: flex;
     justify-content: center;
     position:fixed;
-    background-color: #f2f2f2;
+    /*background-color: #f2f2f2;*/
     left: 0;
     top: 0;
   }
 
   .form-container{
-    background-color: #f2f2f2;
+    /*background-color: #f2f2f2;*/
     width: 50%;
     height: 300px;
     display: flex;
@@ -44,7 +44,8 @@
     margin-left: auto;
     margin-right: auto;
     width: 50%;
-    height: 25px;
+    height: 35px;
+    border-radius: 5px;
   }
 
   .form-label{
@@ -60,9 +61,10 @@
     margin-right: auto;
     margin-top: 10px;
     width: 51%;
-    height: 30px;
+    height: 35px;
     color: white;
     background-color:#4891b8;
+    border-radius: 5px;
   }
 
   .form-btn, a:hover{
