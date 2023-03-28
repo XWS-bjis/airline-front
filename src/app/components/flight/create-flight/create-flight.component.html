@@ -1,58 +1,55 @@
-<h1 class="text-center mb-5">Create new centre</h1>
+<h1 class="text-center mb-5">Create new flight</h1>
 
 <form>
   <div class="form-group">
-    <label for="name">Name</label>
-    <input type="text" class="form-control" id="name" name="name" />
-  </div>
-  <div class="form-group">
-    <label for="street">Street</label>
-    <input type="text" class="form-control" id="street" name="street"  />
-  </div>
-  <div class="form-group">
-    <label for="number">Address number</label>
-    <input type="text" class="form-control" id="number" placeholder="e.g. 22/a" name="number" />
-  </div>
-  <div class="form-group">
-    <label for="description">Description</label>
-    <textarea class="form-control" id="description" rows="3" name="description"></textarea>
-  </div>
-  <div class="form-group">
-    <label for="averageRate">Average rate</label>
-    <input type="text" class="form-control" id="number" name="averageRate" />
+    <label for="name">Take of date      :  </label>
+    <input  type="datetime-local" class="form-control" id="takeOfDate" name="takeOfDate" value="2023-01-01T00:00"  [(ngModel)]="takeOfDate" />
   </div>
 
-<!--
   <div class="form-group">
-    <label for="reserveAppointment">Reserve Appointment</label>
-    <input type="string" class="form-control" id="number" name="reserveAppointment" [(ngModel)]="reserveAppointment" />
+    <label for="name">Landing date     :  </label>
+    <input  type="datetime-local" class="form-control" id="landingDate" name="landingDate" value="2023-01-01T00:00"  [(ngModel)]="landingDate"  />
   </div>
--->
+
   <div class="form-group">
-    <label for="admin">Administrator</label>
-    <select class="form-control" id="admin" name="admin" >
+    <label for="admin">Landing place</label>
+     <select class="form-control" id="landingPlace" name="landingPlace"  [(ngModel)]="landingPlace">
+       <option >
+          
+       </option>
+      </select>
+  </div>
+  <div class="form-group">
+    <label for="admin">Departure place</label>
+    <select class="form-control" id="departurePlace" name="departurePlace"  [(ngModel)]="departurePlace" >
+      <option>
+
+      </option>
        </select>
+  </div>
   
- <!--   <div>
-    <a routerLink="/add"><img src="/assets/warning.png" alt="waring" width="40" height="40" class="mt-2" *ngIf="noAdmins"
-     title="Nijedan administrator centra nije dostupan. Napravite novog administratora klikom na znak upozorenja"  />
-    </a>
-  </div> -->
+  <div class="form-group">
+    <label for="averageRate">Ticket price</label>
+    <input type="number" class="form-control" name="ticketPrice"  [(ngModel)]="ticketPrice" >
+  </div>
 
-    <a routerLink="/addcenteradmins"><img src="/assets/warning.png" alt="waring" width="40" height="40" class="mt-2"
-      title="Nijedan administrator centra nije dostupan. Napravite novog administratora klikom na znak upozorenja"  />
-     </a>
+  <div class="form-group">
+    <label for="averageRate">Total seats number</label>
+    <input type="number" class="form-control" name="totalSeatsNumber"  [(ngModel)]="totalSeatsNumber" >
   </div>
-  <button type="button" class="btn btn-primary" >Create centre</button>
+
+  <div class="form-group">
+    <label for="averageRate">Available seats number</label>
+    <input type="number" class="form-control" name="availableSeatsNumber"  [(ngModel)]="availableSeatsNumber">
+  </div>
+
+
+   
+ 
+  <button type="button" (click)="saveFlight()" class="btn btn-primary" >Add flight</button>
   <br>
   <br>
-<div>
-    <a routerLink="/addcenteradmins">
-      <button type="submit" class="btn btn-primary">
-        Create Admin
-      </button>
-    </a>
-  </div>
+
 
 
 
