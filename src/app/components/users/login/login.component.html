@@ -1,9 +1,17 @@
-<div>
- <form>
-        <label for="username">Username:</label>
-        <input type="text" name="username" placeholder="Enter username" [(ngModel)] = "loginCredential.userName" id="userName">
-        <label for="password">Password:</label>
-        <input type="text"  name="password" placeholder="Enter password" [(ngModel)] = "loginCredential.password" id="password">
-        <button type="button" (click)="loginUser()">LOGIN</button>
- </form>
+<div class="login-container">
+        <div class="form-container">
+                <div class="text-container">
+                        <h2>Welcome to BJIS airline</h2>
+                </div>
+                <div class="input-container">
+                        <label class="form-label" for="username">Username:</label>
+                        <input class="text-input" type="text" name="username" placeholder="Enter username" [(ngModel)] = "loginCredential.userName" id="userName" required>
+                        <label class="form-label" for="password">Password:</label>
+                        <input class="text-input" type="password"  name="password" placeholder="Enter password" [(ngModel)] = "loginCredential.password" id="password" required>
+                        <button class="form-btn" type="button" (click)="loginUser()">LOGIN</button>
+                        <div class="message-container">
+                                <a>Forgot password?</a>
+                        </div>
+                </div>
+        </div>
 </div>
