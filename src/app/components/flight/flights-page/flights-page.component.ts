@@ -13,6 +13,7 @@ export class FlightsPageComponent implements OnInit {
 
   public flights: Flight[] = [];
   public flightFilter: FlightFilter = <FlightFilter>{};
+  public totalPassengers: number = 0;
 
   getFlights(): void {
     this.service.getAll().subscribe(data => {
@@ -21,16 +22,14 @@ export class FlightsPageComponent implements OnInit {
   }
 
   getFilteredFlights(): void{
-    console.log(this.flightFilter)
-    console.log(this.flightFilter.passengers)
     this.service.filter(this.flightFilter).subscribe(data => {
-      console.log(data);
+      this.totalPassengers = this.flightFilter.passengers
       this.flights = data;
     })
   }
 
   addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
-    this.flightFilter.searchDate = (`${event.value?.getFullYear()}/${(event.value?.getMonth() || 0) + 1}/${event.value?.getDate()}`) ;
+    this.flightFilter.searchDate = (`${event.value?.getFullYear()}/${(event.value?.getMonth() || 0) + 1}/${event.value?.getDate()}`);
   }
 
   constructor(

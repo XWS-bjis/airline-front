@@ -2,12 +2,12 @@
     width: 500px;
     border: 1px solid white;
     border-radius: 12px;
-    box-shadow: 0 5px 30px rgba(217, 79, 111, 0.2);
+    box-shadow: 0 5px 30px rgba(212, 142, 38, 0.4);
     background-color: rgba(255, 255, 255, 0.5) !important;
     transition: 0.5s;
     margin-bottom: 2rem;
     margin-right: 2rem;
-
+    padding: 1rem;
   }
 
   .flight-title {
@@ -32,7 +32,7 @@
     display: flex;
     margin: 0 0.5rem;
     padding-right: 0.5rem;
-    background: #ffcbd2;
+    background: #fee8b0;
     border: 1px solid transparent;
     border-radius: 16px;
     justify-content: center;
@@ -42,19 +42,19 @@
   }
   
   .icon {
-    color: #e82d4a;
+    color: #f5a30a;
     transform: scale(0.7);
     font-weight: bold;
   }
   
   .tag > span {
-    color: #e82d4a;
+    color: #f5a30a;
     font-weight: bold;
     font-size: 14px;
   }
   
   .tag {
-    background-color: rgba(255, 161, 178, 0.58);
+    background-color: rgba(255, 216, 100, 0.58);
     display: flex;
     align-items: center;
     border: 1px solid transparent;
@@ -118,7 +118,7 @@
     transition: 0.5s;
     background-size: 200% auto;
     color: white;
-    box-shadow: 0 0 20px rgba(225, 59, 85, 0.4);
+    box-shadow: 0 0 20px rgba(212, 142, 38, 0.4);
     border-radius: 1rem;
     font-size: 12px;
     cursor: pointer;
@@ -142,7 +142,7 @@
   
   .check-out-button {
     background-color: transparent;
-    color: #ff5e70;
+    color: #f5a30a;
     padding: 0.5rem 1rem;
     padding-bottom: 0.8rem;
     border: 0;
@@ -152,12 +152,12 @@
     height: 100%;
     background-color: white;
     text-align: center;
-    border: 1px solid #f49ba9;
-    color: #ff5e75;
+    border: 1px solid #f4d69b;
+    color: #ffd15e;
     background-color: rgba(255, 255, 255, 0.7);
     transition: 0.5s;
     padding: 0.3rem 1.5rem;
-    box-shadow: 0 0 20px rgba(255, 100, 125, 0.2);
+    box-shadow: 0 0 20px rgba(212, 142, 38, 0.4);
     border-radius: 1rem;
     cursor: pointer;
     width: 100%;
@@ -165,4 +165,10 @@
   
   .schedule-button:hover {
     background-color: rgba(255, 255, 255, 1);
+  }
+
+  .no-flights{
+    color:#f5a30a;
+    font-size: 24px; 
+    margin-top: 3rem;
   }
