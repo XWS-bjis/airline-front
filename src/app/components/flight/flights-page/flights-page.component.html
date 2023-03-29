@@ -23,7 +23,7 @@
             <mat-option value="MOSCOW">MOSCOW</mat-option>
           </mat-select>
         </mat-form-field>
-        <mat-form-field appearance="outline">
+        <mat-form-field color="warn" appearance="outline">
           <input matInput [matDatepicker]="picker" placeholder="Take of date"
           (dateInput)="addEvent('input', $any($event))" (dateChange)="addEvent('change', $any($event))">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -38,7 +38,7 @@
             [(ngModel)]="flightFilter.passengers">
         </mat-form-field>         
       </div>
-      <input type="submit" value="Search" class="search-button" (click)="getFilteredFlights()">
+      <input type="submit" value="Search" class="search-button" [disabled]="!flightFilter.passengers" (click)="getFilteredFlights()">
     </div>
 
     <div class="cards">
@@ -59,8 +59,14 @@
         </mat-card-subtitle>
         <mat-card-content>
           <p class="flight-subtitle"><mat-icon fontIcon="airline_seat_recline_extra" class="icon"></mat-icon> {{flight.availableSeatsNumber}}</p>
+          <div *ngIf="totalPassengers"> 
+            Price for {{totalPassengers}} passengers: {{totalPassengers*flight.ticketPrice}} €
+          </div>
         </mat-card-content>
         <mat-card-footer><hr><button class="check-out-button">See details</button></mat-card-footer>
       </mat-card>
+      <div *ngIf="!flights.length" class="no-flights">
+        No flights found!
+      </div>
     </div>
   </div>
