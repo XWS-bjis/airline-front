@@ -1,16 +1,16 @@
   
   <div class="container">
    <div class="logo-container">
-      <a routerLink=""><!--TO DO: make sure that this route matches with Component which user see as home page, see: app-routing.module-->
+      <a href="">
         <div class="name"><p>BJIS</p></div>
         <div class="company"><i>airline</i></div>
       </a>
     </div>
     <div class="navbar-container">
-      <a>
-        <div class="item" routerLink="">Flights</div>
+      <a href="">
+        <div class="item">Flights</div>
       </a>
-      <a *ngIf="userExists === 'false'">
+      <a *ngIf="userExists === 'false'" routerLink="register">
         <div class="item">Register</div>
       </a>
       <a routerLink="/my-flights" *ngIf="role === 'ROLE_REGULAR'">
@@ -19,11 +19,11 @@
       <a *ngIf="role === 'ROLE_ADMIN'">
         <div class="item">Create flight</div>
       </a>
-      <a routerLink="/login"  *ngIf="userExists === 'false'">
+      <a routerLink="login"  *ngIf="userExists === 'false'">
         <div class="item-active"> Log in</div>
       </a>
       <a href=""  *ngIf="userExists === 'true'" (click)="logout()">
-        <div class="item-active"> Log out</div>
+        <div class="item-loged"><mat-icon> person_pin</mat-icon>Log out</div>
       </a>
     </div>
   </div>

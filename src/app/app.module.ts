@@ -16,7 +16,9 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
-import { AllReservationComponent } from './components/reservation/all-reservation/all-reservation.component'
+import { AllReservationComponent } from './components/reservation/all-reservation/all-reservation.component';
+import { RegisterComponent } from './components/users/register/register.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { AllReservationComponent } from './components/reservation/all-reservatio
     LoginComponent,
     NavbarComponent,
     FlightsPageComponent,
-    AllReservationComponent
+    AllReservationComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,8 @@ import { AllReservationComponent } from './components/reservation/all-reservatio
     MatNativeDateModule,
     BrowserAnimationsModule,
     MatSelectModule,
-    MatIconModule
+    MatIconModule,
+    MatCheckboxModule
   ],
   providers: [
    {

@@ -1,0 +1,47 @@
+<div class="register-container">
+    <div class="form-container">
+        <div class="text-container">
+            <h2>Join us - register now</h2>
+        </div>
+        <div class="data-container">
+            <div class="left-data-container">
+                <label class="form-label" for="username">*Name:</label>
+                <input class="text-input" type="text" name="name" placeholder="Enter name" id="name" [(ngModel)]="user.name" required>
+                <label class="form-label" for="surname">*Surname:</label>
+                <input class="text-input" type="text"  name="surname" placeholder="Enter surname" id="surname" [(ngModel)]="user.surname" required>
+
+                <label class="form-label" for="email">*Email:</label>
+                <input class="text-input" type="text" name="email" placeholder="Enter email" id="email" [(ngModel)]="user.email" required>
+                <label class="form-label" for="username">*Username:</label>
+                <input class="text-input" type="text"  name="username" placeholder="Enter username" id="username" [(ngModel)]="user.userName" required>
+
+                <label class="form-label" for="password">*Password:</label>
+                <input class="text-input" type="password" name="password" placeholder="Enter password" id="password" [(ngModel)]="user.password" required>
+                <label class="form-label" for="repeatPass">*Confirm password:</label>
+                <input class="text-input" type="password"  name="repeatPass" placeholder="Enter password" id="repeatPass" [(ngModel)]="confirmPassword" required>
+
+            </div>
+            <div class="right-data-container">
+                <label class="form-label" for="streetNumber">*Street Number:</label>
+                <input class="text-input" type="text" name="streetNumber" placeholder="Enter street number" id="streetNumber" [(ngModel)]="address.streetNumber" required>
+                <label class="form-label" for="streetName">*Street Name:</label>
+                <input class="text-input" type="text"  name="streetName" placeholder="Enter street name" id="streetName" [(ngModel)]="address.streetName" required>
+
+                <label class="form-label" for="postalCode">*Postal code:</label>
+                <input class="text-input" type="text" name="postalCode" placeholder="Enter postal code" id="postalCode"  [(ngModel)]="address.postalCode" required>
+                <label class="form-label" for="town">*Town:</label>
+                <input class="text-input" type="text"  name="town" placeholder="Enter town" id="town" [(ngModel)]="address.town" required>
+
+                <label class="form-label" for="country">*Country:</label>
+                <input class="text-input" type="text" name="country" placeholder="Enter country" id="country" [(ngModel)]="address.country" required>
+            </div>
+
+        </div>
+        <div class="btn-container">
+           <!-- <mat-checkbox class="checkbox-terms">I have read and accept the Terms of Use</mat-checkbox>-->
+            <button type="button" class="signup-btn" (click)="registerUser()">Sign up</button>
+
+        </div>
+    </div>
+
+</div>
