@@ -13,7 +13,7 @@
       <a *ngIf="userExists === 'false'">
         <div class="item">Register</div>
       </a>
-      <a *ngIf="role === 'ROLE_REGULAR'">
+      <a routerLink="/my-flights" *ngIf="role === 'ROLE_REGULAR'">
         <div class="item">My reservations</div>
       </a>
       <a *ngIf="role === 'ROLE_ADMIN'">
@@ -22,7 +22,7 @@
       <a routerLink="/login"  *ngIf="userExists === 'false'">
         <div class="item-active"> Log in</div>
       </a>
-      <a routerLink="/login"  *ngIf="userExists === 'true'" (click)="logout()">
+      <a href=""  *ngIf="userExists === 'true'" (click)="logout()">
         <div class="item-active"> Log out</div>
       </a>
     </div>

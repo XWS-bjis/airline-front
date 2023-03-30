@@ -167,8 +167,21 @@
     background-color: rgba(255, 255, 255, 1);
   }
 
+
   .no-flights{
     color:#f5a30a;
     font-size: 24px; 
     margin-top: 3rem;
+  }
+  .buy-button {
+    background-color:rgba(255, 100, 125, 0.2);
+    border: none;
+    color: #ff5e70;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
   }
