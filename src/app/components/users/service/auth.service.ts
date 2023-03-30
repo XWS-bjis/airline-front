@@ -1,9 +1,10 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, catchError, of } from 'rxjs';
+import { BehaviorSubject, catchError, Observable, of, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { LoginCredential, UserTokenState } from '../model/auth.model';
+import { User } from '../model/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -48,7 +49,7 @@ export class AuthService {
       if (this.accessToken != null) {
         decodedJWT = JSON.parse(window.atob(this.accessToken.split('.')[1]));
       }
-      this.router.navigate(['']); //TO DO: make sure that this route matches with Component which user see as home page, see: app-routing.module 
+      this.router.navigate(['']);
     });
   }
 
@@ -65,7 +66,16 @@ export class AuthService {
     localStorage.removeItem('role');
     localStorage.clear();
     this.nav.next('false');
-    this.router.navigate(['']); //TO DO: make sure that this route matches with Component which user see as home page, see: app-routing.module
+    this.router.navigate(['']);
+  }
+
+  public register(user:User):Observable<any>{
+    return this.http.post<any>(`${this.baseUrl}register`, JSON.stringify(user), { headers: this.headers }).pipe(catchError(this.handleError));
+  }
+
+  public handleError(error:HttpErrorResponse)
+  {
+    return throwError(error);
   }
 
   public getToken(){

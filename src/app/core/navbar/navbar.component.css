@@ -68,6 +68,18 @@ a{
     height: 30px;
 }
 
-.item-active:hover{
+.item-active, .item-loged:hover{
     text-decoration: underline;
+}
+
+.item-loged{
+    border-radius: 2px; 
+    width: 80px;
+    height: 30px;
+    color: white;
+    margin-right: 60px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
