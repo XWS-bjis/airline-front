@@ -1,0 +1,119 @@
+.flight-card {
+    width: 500px;
+    border: 1px solid white;
+    border-radius: 12px;
+    box-shadow: 0 5px 30px rgba(217, 79, 111, 0.2);
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    transition: 0.5s;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+  }
+
+  .subject {
+    display: flex;
+    margin-top: 7rem;
+    margin-left: 3rem;
+    font-size: 28px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+  .flight-title {
+    display: flex;
+    align-items: center;
+  }
+  
+  .flight-subtitle {
+    display: flex;
+    align-items: center;
+  }
+
+  .flight-card:hover {
+    background-color: white !important;
+  }
+  
+  .icons {
+    display: flex;
+  }
+  
+  .icons > div {
+    display: flex;
+    margin: 0 0.5rem;
+    padding-right: 0.5rem;
+    background: #ffcbd2;
+    border: 1px solid transparent;
+    border-radius: 16px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+  
+  }
+  
+  .icon {
+    color: #e82d4a;
+    transform: scale(0.7);
+    font-weight: bold;
+  }
+  
+  .tag > span {
+    color: #e82d4a;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .tag {
+    background-color: rgba(255, 161, 178, 0.58);
+    display: flex;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 16px;
+    padding-right: 1rem;
+    padding-left: 0.3rem;
+    margin-left: 0.6rem;
+    width: fit-content;
+    
+  }
+  
+  .cards {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 6rem;
+    margin-left: 5rem;
+  }
+  
+  mat-form-field {
+    font-size: 12px;
+    letter-spacing: normal;
+    min-width: 14.7rem;
+    max-width: 100%;
+    padding-right:0.5rem;
+  }
+  hr {
+    height: 8px;
+      background-image: linear-gradient(90deg, transparent, #ffd2d7, transparent);
+      border: 0;
+      height: 1px;
+  }
+  
+  .check-out {
+    background-color: transparent;
+    color: #000000;
+    padding: 0.5rem 1rem;
+    padding-bottom: 0.8rem;
+    border: 0;
+    font-size: 15px;
+  }
+
+  .tag-totalPrice {
+    display: flex;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 16px;
+    padding-right: 1rem;
+    padding-left: 0.3rem;
+    margin-left: 0.6rem;
+    width: fit-content;
+  }
+  

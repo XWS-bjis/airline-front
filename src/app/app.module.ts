@@ -15,14 +15,16 @@ import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
-import { MatIconModule } from '@angular/material/icon'
+import { MatIconModule } from '@angular/material/icon';
+import { AllReservationComponent } from './components/reservation/all-reservation/all-reservation.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     NavbarComponent,
-    FlightsPageComponent
+    FlightsPageComponent,
+    AllReservationComponent
   ],
   imports: [
     BrowserModule,

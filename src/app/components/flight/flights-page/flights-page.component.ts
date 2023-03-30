@@ -3,6 +3,10 @@ import { Flight } from '../model/flight';
 import { FlightFilter } from '../model/flight-filter';
 import { FlightService } from '../service/flight.service';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
+import { Reservations } from '../../reservation/model/reservation';
+import { AuthService } from '../../users/service/auth.service';
+import { ReservationService } from '../../reservation/service/reservation.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-flights-page',
@@ -33,11 +37,42 @@ export class FlightsPageComponent implements OnInit {
   }
 
   constructor(
-    private service: FlightService
+    private service: FlightService,
+    private auth: AuthService,
+    private reservationService: ReservationService,
+    private router: Router
   ) { }
 
+  public role:String = '';
+
   ngOnInit(): void {
+    this.defineUserRole();
     this.getFlights();
   }
 
+  buyTickets(id: string) {
+    const reservation: Reservations = {
+      flightId: id,
+      userId: this.auth.getUserId(),
+      ticketAmount: this.flightFilter.passengers,
+    };
+    this.reservationService.buyingTickets(reservation).subscribe(()=>{
+      this.router.navigate(["my-flights"]);
+    });
+    //data => console.log(data)
+  }
+
+  defineUserRole(){
+    switch(this.auth.getRole()){
+      case "ROLE_ADMIN":
+        this.role = "ROLE_ADMIN";
+        break;
+      case "ROLE_REGULAR":
+        this.role = "ROLE_REGULAR";
+        break;
+      default:
+        this.role = "";
+        break;
+    }
+  }
 }
