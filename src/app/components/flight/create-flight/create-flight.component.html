@@ -1,0 +1,61 @@
+<h1 class="text-center mb-5">Create new flight</h1>
+
+<form>
+  <div class="form-group">
+    <label for="name">Take of date      :  </label>
+    <input  type="datetime-local" class="form-control" id="takeOfDate" name="takeOfDate" value="flight.takeOfDate" [(ngModel)]="flight.takeOfDate" required />
+  </div>
+
+  <div class="form-group">
+    <label for="name">Landing date     :  </label>
+    <input  type="datetime-local" class="form-control" id="landingDate" name="landingDate" value="flight.landingDate"  [(ngModel)]="flight.landingDate" required  />
+  </div>
+
+  <div class="form-group">
+    <label for="admin">Landing place</label>
+     <select class="form-control" id="landingPlace" name="landingPlace"  [(ngModel)]="flight.landingPlace" required>
+      <option value="BELGRADE">BELGRADE</option>
+      <option value="LONDON">LONDON</option>
+      <option value="PARIS">PARIS</option>
+      <option value="OSLO">OSLO</option>
+      <option value="TIVAT">TIVAT</option>
+      <option value="MOSCOW">MOSCOW</option>
+      </select>
+  </div>
+  <div class="form-group">
+    <label for="admin">Departure place</label>
+    <select class="form-control" id="departurePlace" name="departurePlace"  [(ngModel)]="flight.departurePlace" required >
+      <option value="BELGRADE">BELGRADE</option>
+      <option value="LONDON">LONDON</option>
+      <option value="PARIS">PARIS</option>
+      <option value="OSLO">OSLO</option>
+      <option value="TIVAT">TIVAT</option>
+      <option value="MOSCOW">MOSCOW</option>
+    </select>
+  </div>
+  
+  <div class="form-group" >
+    <label for="averageRate" >Ticket price</label>
+    <input type="number" class="form-control" name="ticketPrice" min="0" [(ngModel)]="flight.ticketPrice" required>
+  </div>
+
+  <div class="form-group">
+    <label for="averageRate">Total seats number</label>
+    <input type="number" class="form-control" name="totalSeatsNumber" min="0" [(ngModel)]="flight.totalSeatsNumber" required >
+  </div>
+
+  <div class="form-group">
+    <label for="averageRate">Available seats number</label>
+    <input type="number" class="form-control" name="availableSeatsNumber" min="0"  [(ngModel)]="flight.availableSeatsNumber" required>
+  </div>
+
+
+  <button type="button" class="btn btn-primary" (click)="onSubmit()" >CREATE</button>
+  <br>
+  <br>
+
+  <div class="bg-danger p-4 my-4 text-white" type="text-container" *ngIf="errorMessage">
+    {{errorMessage}}
+  </div>
+
+</form>
