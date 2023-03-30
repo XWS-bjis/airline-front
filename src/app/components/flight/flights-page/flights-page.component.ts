@@ -8,6 +8,7 @@ import { AuthService } from '../../users/service/auth.service';
 import { ReservationService } from '../../reservation/service/reservation.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-flights-page',
   templateUrl: './flights-page.component.html',
@@ -58,6 +59,8 @@ export class FlightsPageComponent implements OnInit {
       data => {
         console.log(id);
         console.log(data);
+        // this.flights = this.flights.filter(flight => flight.id !== id);
+        window.location.reload();
       }
     );
   }

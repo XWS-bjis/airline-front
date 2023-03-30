@@ -15,32 +15,44 @@ export class CreateFlightComponent implements OnInit{
 
    public flight: Flight = {} as Flight;
 
+   errorMessage = "";
+
   constructor(private flightService: FlightService, private router: Router, private http: HttpClient) { }
 
 
   ngOnInit(){
   }
 
-  
+  //OVO RADI DOBRO
 
-  saveFlight(){
+  // saveFlight(){
+  //   this.flightService.createFlight(this.flight).subscribe(
+  //     data => {
+  //       console.log(data);
+  //        this.router.navigate(['']);
+  //     }, 
+  //     error => console.log(error));    
+  //   }
 
-    //AKO SU POLJA PRAZNA DA IZADJE GRESKA NPR: Data invalid
+  saveFlight() {
 
-    // this.errorMessage = "";
+    this.errorMessage = "";
 
-    // if (!this.flight || !this.street || !this.number  || !this.description || this.averageRate === 0 || this.administrator === 0) {
-    //   this.errorMessage = "Data invalid";
-    //   return;
+    //ovde ne radi dobro za brojeve, prolazi iako ostane nula
+    if (!this.flight.takeOfDate || !this.flight.landingDate || !this.flight.departurePlace  || !this.flight.landingPlace || this.flight.ticketPrice === undefined || this.flight.totalSeatsNumber === undefined || this.flight.availableSeatsNumber === undefined) {
+      this.errorMessage = "Data invalid";
+      return;
 
-    // }
+    }
 
     this.flightService.createFlight(this.flight).subscribe(
       data => {
         console.log(data);
-         this.router.navigate(['']);
-      },
-      error => console.log(error));
+        this.router.navigate(['']);
+    }, error => {
+      console.log(error);
+      this.errorMessage = error.message;
+    })
   }
 
 
